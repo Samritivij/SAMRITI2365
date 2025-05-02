@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Types of Ciphers</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: #f5f5f5;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 3em;
+      color: #00ffe5;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    nav {
+      background-color: #1f1f2e;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      align-items: center;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      padding: 8px 15px;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      color: #00ffe5;
+      background-color: #1f1f2e;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 70px 10%;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-text {
+      max-width: 600px;
+    }
+
+    .hero-text h2 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #00d9ff;
+    }
+
+    .hero-text p {
+      font-size: 1.2em;
+      line-height: 1.8;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 28px;
+      background-color: #00ffe5;
+      color: #000;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #00d9ff;
+    }
+
+    .ciphers-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      padding: 60px 10%;
+      background-color: #13232f;
+    }
+
+    .cipher-card {
+      background-color: #1f2d3d;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cipher-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .cipher-card h3 {
+      color: #00ffe5;
+      margin-bottom: 15px;
+      font-size: 2em;
+    }
+
+    .cipher-card p {
+      color: #d0d0d0;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
+
+    .cipher-card a {
+      align-self: flex-start;
+      padding: 10px 20px;
+      background-color: #00ffe5;
+      color: #000;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+
+    .cipher-card a:hover {
+      background-color: #00d9ff;
+      box-shadow: 0 0 15px #00ffe5, 0 0 30px #00ffe5;
+    }
+
+    footer {
+      background-color: #0a0a0a;
+      text-align: center;
+      padding: 50px 20px;
+      font-size: 1em;
+      color: #aaa;
+    }
+
+    footer a {
+      color: #00ffe5;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #00d9ff;
+    }
+
+    footer .socials {
+      margin-top: 20px;
+    }
+
+    footer .socials i {
+      font-size: 1.5em;
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    footer .socials i:hover {
+      color: #00d9ff;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Types of Ciphers</h1>
+    <p>Explore different encryption techniques used in cryptography to secure information.</p>
+  </header>
+
+  <nav>
+    <a href="home.html"><i class="fas fa-home"></i> Welcome</a>
+    <a href="working.html"><i class="fas fa-cogs"></i> Cipher Journey</a>
+    <a href="hashing.html"><i class="fas fa-key"></i> Hash Vault</a>
+    <a href="ciphers.html"><i class="fas fa-lock"></i> Cipher Lab</a>
+    <a href="about.html"><i class="fas fa-info-circle"></i> Our Story</a>
+    <a href="contact.html"><i class="fas fa-phone-alt"></i> Contact Us</a>
+  </nav>
+
+  <section class="ciphers-container" id="ciphers">
+    <div class="cipher-card">
+      <h3>Caesar Cipher</h3>
+      <p>The Caesar Cipher is one of the simplest and most widely known encryption techniques. It involves shifting each letter of the plaintext by a fixed number of positions in the alphabet.</p>
+      <p><strong>Example:</strong> "HELLO" with a shift of 3 becomes "KHOOR".</p>
+      <a href="https://en.wikipedia.org/wiki/Caesar_cipher" class="learn-more-button">Learn More</a>
+    </div>
+    <div class="cipher-card">
+      <h3>Vigenère Cipher</h3>
+      <p>The Vigenère Cipher is a method of encrypting alphabetic text by using a simple form of polyalphabetic substitution. The shift for each letter is determined by a keyword.</p>
+      <p><strong>Example:</strong> Using the keyword "KEY" to encrypt "HELLO" results in "RIJVS".</p>
+      <a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher" class="learn-more-button">Learn More</a>
+    </div>
+    <div class="cipher-card">
+      <h3>Enigma Machine</h3>
+      <p>The Enigma Machine was used by the Germans in WWII, employing multiple rotors to create complex encryption. It was famously cracked by the Allies at Bletchley Park.</p>
+      <p><strong>Example:</strong> Intercepted encrypted messages were cracked, changing the course of the war.</p>
+      <a href="https://en.wikipedia.org/wiki/Enigma_machine" class="learn-more-button">Learn More</a>
+    </div>
+    <div class="cipher-card">
+      <h3>Elliptic Curve Cryptography (ECC)</h3>
+      <p>ECC is an asymmetric encryption method based on the algebraic structure of elliptic curves. It offers high security with smaller key sizes compared to other methods.</p>
+      <p><strong>Example:</strong> ECC is widely used in mobile devices due to its efficiency and lower computational cost.</p>
+      <a href="https://en.wikipedia.org/wiki/Elliptic_curve_cryptography" class="learn-more-button">Learn More</a>
+    </div>
+    <div class="cipher-card">
+      <h3>Transposition Cipher</h3>
+      <p>This cipher rearranges the characters of the plaintext message. Unlike substitution ciphers, the letters are moved, not substituted.</p>
+      <p><strong>Example:</strong> "HELLO" transposed with a 3x3 grid might become "LHELO".</p>
+      <a href="https://en.wikipedia.org/wiki/Transposition_cipher" class="learn-more-button">Learn More</a>
+    </div>
+    <div class="cipher-card">
+      <h3>One-Time Pad</h3>
+      <p>The One-Time Pad is an unbreakable encryption method that uses a random key as long as the plaintext message. The key is discarded after use.</p>
+      <p><strong>Example:</strong> "HELLO" encrypted with a random key could become "XJWEZ".</p>
+      <a href="https://en.wikipedia.org/wiki/One-time_pad" class="learn-more-button">Learn More</a>
+    </div>
+    <div class="cipher-card">
+      <h3>Playfair Cipher</h3>
+      <p>The Playfair Cipher is a digraph substitution cipher that encrypts pairs of letters based on a 5x5 letter grid.</p>
+      <p><strong>Example:</strong> The pair "HE" from "HELLO" may become "DI" depending on the grid setup.</p>
+      <a href="https://en.wikipedia.org/wiki/Playfair_cipher" class="learn-more-button">Learn More</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 <span style="color:#00ffe5;">CipherVerse</span>. All rights reserved.</p>
+    <p>Crafted with 🧠, 🎨, and &lt;code/&gt; — Empowering cryptography learners across the globe.</p>
+    <p>Email: <a href="mailto:info@cipherverse.com">info@cipherverse.com</a></p>
+    <div class="socials">
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-twitter-square"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </footer>
+</body>
+
+</html>
